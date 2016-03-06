@@ -59,7 +59,7 @@ namespace TimeClockApp
             request.TimeMax = payEnd;
             request.ShowDeleted = false;
             request.SingleEvents = true;
-            request.MaxResults = 20;
+            request.MaxResults = 40;
             request.OrderBy = EventsResource.ListRequest.OrderByEnum.StartTime;
 
             // List events.
@@ -67,14 +67,27 @@ namespace TimeClockApp
             if (events.Items != null && events.Items.Count > 0)
             {
                 lbEmpHours.Items.Clear();
+                dgvEmpHours.Rows.Clear();
+
                 foreach (var eventItem in events.Items)
                 {
-                    // 1/15/2016 7:30:00 AM                    
+                    // 1/15/2016 7:30:00 AM                                        
                     string email = eventItem.Creator.Email.ToString();
                     string start = eventItem.Start.DateTime.ToString();
                     string end = eventItem.End.DateTime.ToString();
                     string summary = eventItem.Summary.ToString();
+                    string location = null;
 
+                    if (eventItem.Location == null)
+                    {
+                        location = "No location selected.";
+                    }
+                    else
+                    {
+                        location = eventItem.Location.ToString();
+                    }
+                    
+                    
                     DateTime start_date = Functions.CreateDateTime(start);
                     DateTime end_date = Functions.CreateDateTime(end);
 
@@ -83,18 +96,30 @@ namespace TimeClockApp
                     string endTimeString = end_date.ToShortTimeString();
 
                     lbEmpHours.Items.Add(summary);
-                    lbEmpHours.Items.Add("\r\nDate:" + startDateString);
-                    lbEmpHours.Items.Add("\r\nStart time: " + startTimeString); 
+                    lbEmpHours.Items.Add("\r\nDate: " + startDateString);
+                    lbEmpHours.Items.Add("\r\nStart time: " + startTimeString);
                     lbEmpHours.Items.Add("\r\nEnd time: " + endTimeString);
-                    lbEmpHours.Items.Add("\r\nEmail:" + email);
+                    lbEmpHours.Items.Add("\r\nEmail: " + email);
                     lbEmpHours.Items.Add("Total: " + (eventItem.End.DateTime - eventItem.Start.DateTime) + "\r\n");
                     lbEmpHours.Items.Add("\r");
+
+                    dgvEmpHours.Rows[0].Cells[0].Value = email;
+                    dgvEmpHours.Rows[0].Cells[1].Value = startDateString;
+                    dgvEmpHours.Rows[0].Cells[2].Value = summary;
+                    dgvEmpHours.Rows[0].Cells[3].Value = location;
+                    dgvEmpHours.Rows[0].Cells[4].Value = startTimeString;
+                    dgvEmpHours.Rows[0].Cells[5].Value = endTimeString;
+                    dgvEmpHours.Rows[0].Cells[6].Value = eventItem.End.DateTime - eventItem.Start.DateTime;
+                    dgvEmpHours.Rows.Insert(0, 1);
                 }
+                dgvEmpHours.Rows.RemoveAt(0);
             }
             else
             {
                 lbEmpHours.Items.Add("No jobs found.");
             }
+
+            
         }
     }
 }

@@ -34,8 +34,15 @@
             this.lblPayEnd = new System.Windows.Forms.Label();
             this.btnCalcEmpHours = new System.Windows.Forms.Button();
             this.lbEmpHours = new System.Windows.Forms.ListBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgvEmpHours = new System.Windows.Forms.DataGridView();
+            this.colEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHours = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpHours)).BeginInit();
             this.SuspendLayout();
             // 
             // dtpPayStart
@@ -84,26 +91,89 @@
             // 
             // lbEmpHours
             // 
+            this.lbEmpHours.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lbEmpHours.FormattingEnabled = true;
             this.lbEmpHours.Location = new System.Drawing.Point(12, 90);
             this.lbEmpHours.Name = "lbEmpHours";
-            this.lbEmpHours.Size = new System.Drawing.Size(318, 433);
+            this.lbEmpHours.Size = new System.Drawing.Size(277, 537);
             this.lbEmpHours.TabIndex = 6;
             // 
-            // dataGridView1
+            // dgvEmpHours
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(336, 90);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(404, 430);
-            this.dataGridView1.TabIndex = 7;
+            this.dgvEmpHours.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvEmpHours.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvEmpHours.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmpHours.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colEmployee,
+            this.colDate,
+            this.colDescription,
+            this.colLocation,
+            this.colStart,
+            this.colEnd,
+            this.colHours});
+            this.dgvEmpHours.Location = new System.Drawing.Point(295, 90);
+            this.dgvEmpHours.Name = "dgvEmpHours";
+            this.dgvEmpHours.Size = new System.Drawing.Size(643, 537);
+            this.dgvEmpHours.TabIndex = 7;
+            // 
+            // colEmployee
+            // 
+            this.colEmployee.HeaderText = "Employee";
+            this.colEmployee.Name = "colEmployee";
+            this.colEmployee.ReadOnly = true;
+            this.colEmployee.Width = 78;
+            // 
+            // colDate
+            // 
+            this.colDate.HeaderText = "Date";
+            this.colDate.Name = "colDate";
+            this.colDate.ReadOnly = true;
+            this.colDate.Width = 55;
+            // 
+            // colDescription
+            // 
+            this.colDescription.HeaderText = "Description";
+            this.colDescription.Name = "colDescription";
+            this.colDescription.ReadOnly = true;
+            this.colDescription.Width = 85;
+            // 
+            // colLocation
+            // 
+            this.colLocation.HeaderText = "Location";
+            this.colLocation.Name = "colLocation";
+            this.colLocation.ReadOnly = true;
+            this.colLocation.Width = 73;
+            // 
+            // colStart
+            // 
+            this.colStart.HeaderText = "Start Time";
+            this.colStart.Name = "colStart";
+            this.colStart.ReadOnly = true;
+            this.colStart.Width = 80;
+            // 
+            // colEnd
+            // 
+            this.colEnd.HeaderText = "End Time";
+            this.colEnd.Name = "colEnd";
+            this.colEnd.ReadOnly = true;
+            this.colEnd.Width = 77;
+            // 
+            // colHours
+            // 
+            this.colHours.HeaderText = "Hours Worked";
+            this.colHours.Name = "colHours";
+            this.colHours.ReadOnly = true;
+            this.colHours.Width = 101;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(752, 532);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(942, 632);
+            this.Controls.Add(this.dgvEmpHours);
             this.Controls.Add(this.lbEmpHours);
             this.Controls.Add(this.btnCalcEmpHours);
             this.Controls.Add(this.lblPayEnd);
@@ -112,7 +182,7 @@
             this.Controls.Add(this.dtpPayStart);
             this.Name = "Form1";
             this.Text = "MBA Time Clock";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpHours)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,7 +196,14 @@
         private System.Windows.Forms.Label lblPayEnd;
         private System.Windows.Forms.Button btnCalcEmpHours;
         private System.Windows.Forms.ListBox lbEmpHours;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvEmpHours;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEmployee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colLocation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEnd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colHours;
     }
 }
 
