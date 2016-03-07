@@ -81,7 +81,6 @@ namespace GoogleTimeClock
             jobTitle = chunk.Substring(0, chunk.IndexOf(' ')).Trim();
 
             return jobTitle;
-        }        
-        
+        }   
     }
 }

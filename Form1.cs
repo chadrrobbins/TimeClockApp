@@ -66,8 +66,9 @@ namespace TimeClockApp
             Events events = request.Execute();            
             if (events.Items != null && events.Items.Count > 0)
             {
-                lbEmpHours.Items.Clear();
+                //lbEmpHours.Items.Clear();
                 dgvEmpHours.Rows.Clear();
+                Dictionary<string, double> dict = new Dictionary<string, double>();
 
                 foreach (var eventItem in events.Items)
                 {
@@ -94,14 +95,8 @@ namespace TimeClockApp
                     string startDateString = start_date.ToShortDateString();
                     string startTimeString = start_date.ToShortTimeString();
                     string endTimeString = end_date.ToShortTimeString();
-
-                    lbEmpHours.Items.Add(summary);
-                    lbEmpHours.Items.Add("\r\nDate: " + startDateString);
-                    lbEmpHours.Items.Add("\r\nStart time: " + startTimeString);
-                    lbEmpHours.Items.Add("\r\nEnd time: " + endTimeString);
-                    lbEmpHours.Items.Add("\r\nEmail: " + email);
-                    lbEmpHours.Items.Add("Total: " + (eventItem.End.DateTime - eventItem.Start.DateTime) + "\r\n");
-                    lbEmpHours.Items.Add("\r");
+                    TimeSpan diff = end_date - start_date;
+                    double hours = diff.TotalHours;
 
                     dgvEmpHours.Rows[0].Cells[0].Value = email;
                     dgvEmpHours.Rows[0].Cells[1].Value = startDateString;
@@ -111,12 +106,46 @@ namespace TimeClockApp
                     dgvEmpHours.Rows[0].Cells[5].Value = endTimeString;
                     dgvEmpHours.Rows[0].Cells[6].Value = eventItem.End.DateTime - eventItem.Start.DateTime;
                     dgvEmpHours.Rows.Insert(0, 1);
+
+                    if (dict.ContainsKey(email) == true)
+                    {
+                        dict[email] += hours;
+                    }
+                    else
+                    {
+                        dict.Add(email, hours);
+                    }                    
                 }
+
                 dgvEmpHours.Rows.RemoveAt(0);
+
+                int i = 0; 
+
+                Label header = new Label();
+                header.Name = "lblHeader";
+                header.Location = new Point(9, 90 + i);
+                header.Text = "Employee hours worked:";
+                header.AutoSize = true;
+                header.Visible = true;
+                this.Controls.Add(header);
+
+                foreach (KeyValuePair<string, double> pair in dict)
+                {
+                    
+
+                    Label label = new Label();
+                    label.Name = "lbl" + pair;
+                    label.Location = new Point(9, 120 + i);
+                    label.Text = "      " + pair.Key.ToString() + ": " + pair.Value.ToString();
+                    label.AutoSize = true;
+                    label.Visible = true;
+                    this.Controls.Add(label);
+                    i += 25;
+                }
             }
             else
             {
-                lbEmpHours.Items.Add("No jobs found.");
+                //lbEmpHours.Items.Add("No jobs found.");
             }
 
             

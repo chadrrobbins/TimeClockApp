@@ -33,7 +33,6 @@
             this.lblPayStart = new System.Windows.Forms.Label();
             this.lblPayEnd = new System.Windows.Forms.Label();
             this.btnCalcEmpHours = new System.Windows.Forms.Button();
-            this.lbEmpHours = new System.Windows.Forms.ListBox();
             this.dgvEmpHours = new System.Windows.Forms.DataGridView();
             this.colEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,16 +88,6 @@
             this.btnCalcEmpHours.UseVisualStyleBackColor = true;
             this.btnCalcEmpHours.Click += new System.EventHandler(this.btnCalcEmpHours_Click);
             // 
-            // lbEmpHours
-            // 
-            this.lbEmpHours.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lbEmpHours.FormattingEnabled = true;
-            this.lbEmpHours.Location = new System.Drawing.Point(12, 90);
-            this.lbEmpHours.Name = "lbEmpHours";
-            this.lbEmpHours.Size = new System.Drawing.Size(277, 537);
-            this.lbEmpHours.TabIndex = 6;
-            // 
             // dgvEmpHours
             // 
             this.dgvEmpHours.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -116,65 +105,71 @@
             this.colHours});
             this.dgvEmpHours.Location = new System.Drawing.Point(295, 90);
             this.dgvEmpHours.Name = "dgvEmpHours";
-            this.dgvEmpHours.Size = new System.Drawing.Size(643, 537);
+            this.dgvEmpHours.Size = new System.Drawing.Size(823, 537);
             this.dgvEmpHours.TabIndex = 7;
             // 
             // colEmployee
             // 
+            this.colEmployee.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.colEmployee.HeaderText = "Employee";
             this.colEmployee.Name = "colEmployee";
             this.colEmployee.ReadOnly = true;
-            this.colEmployee.Width = 78;
+            this.colEmployee.Width = 150;
             // 
             // colDate
             // 
+            this.colDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.colDate.HeaderText = "Date";
             this.colDate.Name = "colDate";
             this.colDate.ReadOnly = true;
-            this.colDate.Width = 55;
+            this.colDate.Width = 65;
             // 
             // colDescription
             // 
+            this.colDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.colDescription.HeaderText = "Description";
             this.colDescription.Name = "colDescription";
             this.colDescription.ReadOnly = true;
-            this.colDescription.Width = 85;
+            this.colDescription.Width = 200;
             // 
             // colLocation
             // 
+            this.colLocation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.colLocation.HeaderText = "Location";
             this.colLocation.Name = "colLocation";
             this.colLocation.ReadOnly = true;
-            this.colLocation.Width = 73;
+            this.colLocation.Width = 150;
             // 
             // colStart
             // 
+            this.colStart.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.colStart.HeaderText = "Start Time";
             this.colStart.Name = "colStart";
             this.colStart.ReadOnly = true;
-            this.colStart.Width = 80;
+            this.colStart.Width = 60;
             // 
             // colEnd
             // 
+            this.colEnd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.colEnd.HeaderText = "End Time";
             this.colEnd.Name = "colEnd";
             this.colEnd.ReadOnly = true;
-            this.colEnd.Width = 77;
+            this.colEnd.Width = 60;
             // 
             // colHours
             // 
+            this.colHours.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.colHours.HeaderText = "Hours Worked";
             this.colHours.Name = "colHours";
             this.colHours.ReadOnly = true;
-            this.colHours.Width = 101;
+            this.colHours.Width = 80;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(942, 632);
+            this.ClientSize = new System.Drawing.Size(1122, 632);
             this.Controls.Add(this.dgvEmpHours);
-            this.Controls.Add(this.lbEmpHours);
             this.Controls.Add(this.btnCalcEmpHours);
             this.Controls.Add(this.lblPayEnd);
             this.Controls.Add(this.lblPayStart);
@@ -195,7 +190,6 @@
         private System.Windows.Forms.Label lblPayStart;
         private System.Windows.Forms.Label lblPayEnd;
         private System.Windows.Forms.Button btnCalcEmpHours;
-        private System.Windows.Forms.ListBox lbEmpHours;
         private System.Windows.Forms.DataGridView dgvEmpHours;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEmployee;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDate;
