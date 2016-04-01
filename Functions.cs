@@ -23,7 +23,6 @@ namespace GoogleTimeClock
                 credPath = Path.Combine(credPath, ".credentials/calendar-dotnet-quickstart");
 
                 credential = GoogleWebAuthorizationBroker.AuthorizeAsync(GoogleClientSecrets.Load(stream).Secrets, Scopes, "user", CancellationToken.None, new FileDataStore(credPath, true)).Result;
-                Console.WriteLine("Credential file saved to: " + credPath);
             }
         }
 
@@ -81,6 +80,30 @@ namespace GoogleTimeClock
             jobTitle = chunk.Substring(0, chunk.IndexOf(' ')).Trim();
 
             return jobTitle;
-        }   
+        }
+
+        public int search(string source, string search)
+        {
+            int contains = 0;
+
+            if (source == null)
+            {
+                contains = 0;
+                return contains;
+            }
+            else
+            {
+                if (source.Contains(search))
+                {
+                    contains = 1;
+                    return contains;
+                }
+                else
+                {
+                    contains = 0;
+                    return contains;
+                }
+            }            
+        }
     }
 }

@@ -1,4 +1,6 @@
 C:\Users\Robbins\documents\visual studio 2012\Projects\TimeClockApp\bin\Debug\TimeClockApp.exe.config
+C:\Users\Robbins\documents\visual studio 2012\Projects\TimeClockApp\bin\Debug\TimeClockApp.exe.manifest
+C:\Users\Robbins\documents\visual studio 2012\Projects\TimeClockApp\bin\Debug\TimeClockApp.application
 C:\Users\Robbins\documents\visual studio 2012\Projects\TimeClockApp\bin\Debug\TimeClockApp.exe
 C:\Users\Robbins\documents\visual studio 2012\Projects\TimeClockApp\bin\Debug\TimeClockApp.pdb
 C:\Users\Robbins\documents\visual studio 2012\Projects\TimeClockApp\bin\Debug\BouncyCastle.Crypto.dll
@@ -41,5 +43,8 @@ C:\Users\Robbins\documents\visual studio 2012\Projects\TimeClockApp\obj\Debug\Ti
 C:\Users\Robbins\documents\visual studio 2012\Projects\TimeClockApp\obj\Debug\TimeClockApp.Form1.resources
 C:\Users\Robbins\documents\visual studio 2012\Projects\TimeClockApp\obj\Debug\TimeClockApp.Properties.Resources.resources
 C:\Users\Robbins\documents\visual studio 2012\Projects\TimeClockApp\obj\Debug\TimeClockApp.csproj.GenerateResource.Cache
+C:\Users\Robbins\documents\visual studio 2012\Projects\TimeClockApp\obj\Debug\TimeClockApp.exe.manifest
+C:\Users\Robbins\documents\visual studio 2012\Projects\TimeClockApp\obj\Debug\TimeClockApp.application
 C:\Users\Robbins\documents\visual studio 2012\Projects\TimeClockApp\obj\Debug\TimeClockApp.exe
 C:\Users\Robbins\documents\visual studio 2012\Projects\TimeClockApp\obj\Debug\TimeClockApp.pdb
+C:\Users\Robbins\documents\visual studio 2012\Projects\TimeClockApp\obj\Debug\TimeClockApp.csprojResolveAssemblyReference.cache
